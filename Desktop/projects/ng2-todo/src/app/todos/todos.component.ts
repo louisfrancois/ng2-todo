@@ -33,4 +33,12 @@ export class TodosComponent implements OnInit {
     );
   }
 
+  deleteTodo(todoTask) {
+    for (let i = 0; i < this.todos.length; i++) {
+      if (this.todos[i].task === todoTask) {
+        this.todos.splice(i, 1);
+      }
+    }
+  }
+
 }

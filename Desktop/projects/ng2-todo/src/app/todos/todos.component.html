@@ -6,5 +6,6 @@
 <ul>
   <li *ngFor="let todo of todos">
     {{todo.task}}
+    <button (click)="deleteTodo(todo.task)">X</button>
   </li>
 </ul>
