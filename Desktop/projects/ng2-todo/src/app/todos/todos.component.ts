@@ -32,6 +32,8 @@ export class TodosComponent implements OnInit {
         this.todos.splice(i, 1);
       }
     }
+
+    this._todoService.deleteTodoService(todoTask);
   }
 
 }
