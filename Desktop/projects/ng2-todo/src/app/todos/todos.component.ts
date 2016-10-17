@@ -14,13 +14,13 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.todos = [
       {
-        text: 'Do my laundry'
+        task: 'Do my laundry'
       },
       {
-        text: 'Work out chest today'
+        task: 'Work out chest today'
       },
       {
-        text: 'Bye broccoli for dinner'
+        task: 'Bye broccoli for dinner'
       }
     ];
   }
