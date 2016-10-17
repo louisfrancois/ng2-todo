@@ -53,6 +53,8 @@ export class TodosComponent implements OnInit {
     }
 
     this._todoService.updateTodoService(this.oldText, this.text);
+    this.text = '';
+    this.appState = 'default';
   }
 
 }
