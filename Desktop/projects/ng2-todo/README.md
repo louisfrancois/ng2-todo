@@ -1,4 +1,5 @@
 # Ng2Todo
+This is a simple To-do list web app created using Angular 2. Check out the tutorial by Brad Traversy: http://bit.ly/2edWUVm
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
