@@ -10,6 +10,8 @@ import { TodoService } from '../todo.service';
 export class TodosComponent implements OnInit {
   todos;
   text;
+  oldText;
+  appState = 'default';
 
   constructor(private _todoService: TodoService) { }
 
@@ -22,8 +24,9 @@ export class TodosComponent implements OnInit {
       task: this.text
     }
     this.todos.push(newTodo);
+    this.text = '';
 
-    this._todoService.addTodoService(newTodo)
+    this._todoService.addTodoService(newTodo);
   }
 
   deleteTodo(todoTask) {
@@ -34,6 +37,22 @@ export class TodosComponent implements OnInit {
     }
 
     this._todoService.deleteTodoService(todoTask);
+  }
+
+  editTodo(todo) {
+    this.appState = 'edit';
+    this.oldText = todo.task;
+    this.text = todo.task;
+  }
+
+  updateTodo() {
+    for (let i = 0; i < this.todos.length; i++) {
+      if (this.todos[i].task === this.oldText) {
+        this.todos[i].task = this.text;
+      }
+    }
+
+    this._todoService.updateTodoService(this.oldText, this.text);
   }
 
 }
